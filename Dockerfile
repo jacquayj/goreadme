@@ -8,4 +8,6 @@ COPY . /home/src
 WORKDIR /home/src
 RUN go build -o /bin/action ./cmd/goreadme
 
+RUN git config --global --add safe.directory /github/workspace
+
 ENTRYPOINT [ "/bin/action" ]
